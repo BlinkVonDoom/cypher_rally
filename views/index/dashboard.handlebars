@@ -1,0 +1,44 @@
+<h1>welcome {{user.firstName}}</h1>
+<h4>your characters</h4>
+{{#if characters}}
+  <table class="striped">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>focus</th>
+        <th>descriptor</th>
+        <th>tier</th>
+        <th>date</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each characters}}
+        <tr>
+          <td> <a href="/characters/show/{{id}}"> {{name}}</a></td>
+          <td>
+            <a href="/characters/show/{{id}}"> {{focus}}</a>
+          </td>
+          <td>
+            <a href="/characters/show/{{id}}"> {{descriptor}}</a>
+          </td>
+          <td>
+            <a href="/characters/show/{{id}}"> {{tier}}</a>
+          </td>
+          <td>{{formatDate date 'MMMM do YYYY'}}</td>
+          {{!-- <td>
+            <a class="btn left-align" href="/stories/edit/{{id}}"><i class="fa fa-pencil"></i>edit</a>
+            <form action="/stories/{{id}}?_method=DELETE" method="post" id="delete-form">
+              <input type="hidden" name="_method" value="DELETE">
+              <button type="submit" class="btn red"><i class="fa fa-remove"></i>delete</button>
+            </form>
+          </td> --}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>
+    no characters created
+  </p>
+{{/if}}

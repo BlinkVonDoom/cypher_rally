@@ -1,0 +1,54 @@
+<div class="row">
+  <form action="/characters/{{id}}?_method=PUT" method="post" class="col s12">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+      <div class="input-field">
+        <input type="text" name="name" value="{{name}}">
+        <label for="name">character name</label>
+      </div>
+      <div class="form-group">
+        <label for="type">character type</label>
+        <select class="form-control" name="type">
+          {{#select type}}
+          <option>glaive</option>
+          <option>jack</option>
+          <option>nano</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="input-field">
+        <input type="text" name="focus" value="{{focus}}">
+        <label for="focus">character focus</label>
+      </div>
+      <div class="input-field">
+        <input type="text" name="descriptor" value="{{descriptor}}">
+        <label for="descriptor">character descriptor</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="mightPool" value="{{might.pool}}">
+        <label for="mightPool">might pool</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="mightEdge" value="{{might.edge}}">
+        <label for="mightEdge">might edge</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="speedPool" value="{{speed.pool}}">
+        <label for="speedPool">speed.pool</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="speedEdge" value="{{speed.edge}}">
+        <label for="speedEdge">speed edge</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="intellectPool" value="{{intellect.pool}}">
+        <label for="intellectPool">intellect pool</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="intellectEdge" value="{{intellect.edge}}">
+        <label for="intellectEdge">intellect edge</label>
+      </div>
+    </div>
+    <input type="submit" value="Save" class="btn">
+  </form>
+</div>

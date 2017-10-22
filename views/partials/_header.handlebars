@@ -1,0 +1,34 @@
+<nav class="grey darken=3">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center"> cypherrally</a>
+      <a href="#" data-activates="main-menu" class="button-collapse show-on-large"><i class="fa fa-bars"></i></a>
+      <!-- right nav-->
+      <ul class="right hide-on-small-only">
+        {{#if user}}
+          <li><a href="/dashboard">Welcome {{user.firstName}}</a></li>
+          <li><a href="/auth/logout"><i class="fa fa-sign-out"></i>logout</a></li>
+        {{else}}
+          <li><a href="/characters"><i class="fa fa-book"></i>public characters</a></li>
+        {{/if}}
+      </ul>
+      <!-- side menu -->
+      <ul class="side-nav" id="main-menu">
+        {{#if user}}
+        {{else}}
+          <li>
+            <a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i>login with google</a>
+          </li>
+        {{/if}}
+        <li><a href="/characters"><i class="fa fa-book"></i>public characters</a></li>
+        <li class="divider"></li>
+        {{#if user}}
+          <li><a href="/dashboard"><i class="fa fa-cog"></i>dashboard</a></li>
+          <li><a href="/characters/my"><i class="fa fa-book"></i>my characters</a></li>
+          <li><a href="/characters/new"><i class="fa fa-plus-square"></i>new character</a></li>
+          <li><a href="/auth/logout"><i class="fa fa-sign-out"></i>logout</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
