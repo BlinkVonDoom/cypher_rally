@@ -26,13 +26,13 @@
             <a href="/characters/show/{{id}}"> {{tier}}</a>
           </td>
           <td>{{formatDate date 'MMMM do YYYY'}}</td>
-          {{!-- <td>
-            <a class="btn left-align" href="/stories/edit/{{id}}"><i class="fa fa-pencil"></i>edit</a>
-            <form action="/stories/{{id}}?_method=DELETE" method="post" id="delete-form">
+          <td>
+            <a class="btn left-align" href="/characters/edit/{{id}}"><i class="fa fa-pencil"></i>edit</a>
+            <form action="/characters/{{id}}?_method=DELETE" method="post" id="delete-form">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn red"><i class="fa fa-remove"></i>delete</button>
             </form>
-          </td> --}}
+          </td>
         </tr>
       {{/each}}
     </tbody>

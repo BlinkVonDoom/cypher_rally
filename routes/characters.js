@@ -103,7 +103,9 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
 });
 
 router.delete('/:id', ensureAuthenticated, (req, res) => {
-  res.send('character deleted');
+  Character.remove({ _id: req.params.id }).then(() =>
+    res.redirect('/dashboard')
+  );
 });
 
 module.exports = router;

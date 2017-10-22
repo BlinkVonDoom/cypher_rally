@@ -4,8 +4,7 @@
   "description": "cypher_rally",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "npm start"
+    "start": "node app.js"
   },
   "author": "blinkvondoom",
   "license": "ISC",
