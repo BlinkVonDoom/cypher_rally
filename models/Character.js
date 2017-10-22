@@ -60,10 +60,10 @@ const CharacterSchema = new Schema({
     type: Number
   },
   characterSkills: [],
-  characterSpecialAbilities: [
+  esoteries: [
     // {
     //   type: Schema.Types.ObjectId,
-    //   ref: 'characterSpecialAbilities'
+    //   ref: 'esoteries'
     // }
   ],
   author: {

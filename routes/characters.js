@@ -3,12 +3,17 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Character = mongoose.model('characters');
 const CharacterSkills = mongoose.model('characterSkills');
-const CharacterSpecialAbilities = mongoose.model('characterSpecialAbilities');
+const Esoteries = mongoose.model('esoteries');
 const User = mongoose.model('users');
 const { ensureAuthenticated, ensureGuest } = require('../helpers/auth');
 
 router.get('/', ensureAuthenticated, (req, res) => {
-  res.send('user');
+  Character.find({}, 'name')
+    .populate('author')
+    .sort({ date: 'desc' })
+    .then(characters => {
+      res.render('characters/index', characters);
+    });
 });
 
 router.get('/show/:id', ensureAuthenticated, (req, res) => {
@@ -42,12 +47,12 @@ router.post('/', ensureAuthenticated, (req, res) => {
       edge: req.body.mightEdge
     },
     speed: {
-      pool: parseInt(req.body.speedPool),
-      edge: parseInt(req.body.speedEdge)
+      pool: req.body.speedPool,
+      edge: req.body.speedEdge
     },
     intellect: {
-      pool: parseInt(req.body.intellectPool),
-      edge: parseInt(req.body.intellectEdge)
+      pool: req.body.intellectPool,
+      edge: req.body.intellectEdge
     },
     armor: req.body.armor,
     author: req.user.id
@@ -95,7 +100,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
       character
         .save()
         .then(character => {
-          res.render(`/character/show/${character.id}`);
+          res.render(`/characters/show/${character.id}`);
         })
         .catch(e => res.send(e));
     })

@@ -1,51 +1,114 @@
 <div class="row">
-  <form action="/characters" method="post" class="col s12">
-    <div class="row">
-      <div class="input-field">
-        <input type="text" name="name">
-        <label for="name">character name</label>
-      </div>
-      <div class="form-group">
-        <label for="type">character type</label>
-        <select class="form-control" name="type">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a class="active" href="#character">character</a></li>
+      <li class="tab col s3"><a href="#esoteries">esoteries</a></li>
+      <li class="tab col s3"><a href="#skills">skills</a></li>
+    </ul>
+  </div>
+
+  <div id="character">
+    <form action="/characters" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name">
+          <label for="name">character name</label>
+        </div>
+        <div class="form-group">
+          <label for="type">character type</label>
+          <select class="form-control" name="type">
           <option>glaive</option>
           <option>jack</option>
           <option>nano</option>
         </select>
+        </div>
+        <div class="input-field">
+          <input type="text" name="focus">
+          <label for="focus">character focus</label>
+        </div>
+        <div class="input-field">
+          <input type="text" name="descriptor">
+          <label for="descriptor">character descriptor</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="armor">
+          <label for="armor">armor</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="mightPool">
+          <label for="mightPool">might pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="mightEdge">
+          <label for="mightEdge">might edge</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="speedPool">
+          <label for="speedPool">speed pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="speedEdge">
+          <label for="speedEdge">speed edge</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="intellectPool">
+          <label for="intellectPool">intellect pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="intellectEdge">
+          <label for="intellectEdge">intellect edge</label>
+        </div>
       </div>
-      <div class="input-field">
-        <input type="text" name="focus">
-        <label for="focus">character focus</label>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
+
+
+  <div id="esoteries">
+    <form action="/esoteries" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name">
+          <label for="name">esotery name</label>
+        </div>
+        <div class="form-group">
+          <label for="costType">cost type</label>
+          <select class="form-control" name="costType">
+          <option>might</option>
+          <option>intellect</option>
+          <option>speed</option>
+        </div>
+        <div class="input-field">
+          <input type="number" name="cost">
+          <label for="cost">cost</label>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <h5>description:</h5>
+            <textarea name="body"></textarea>
+          </div>
+        </div>
       </div>
-      <div class="input-field">
-        <input type="text" name="descriptor">
-        <label for="descriptor">character descriptor</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="mightPool">
-        <label for="mightPool">might pool</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="mightEdge">
-        <label for="mightEdge">might edge</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="speedPool">
-        <label for="speedPool">speed pool</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="speedEdge">
-        <label for="speedEdge">speed edge</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="intellectPool">
-        <label for="intellectPool">intellect pool</label>
-      </div>
-      <div class="input-field">
-        <input type="number" name="intellectEdge">
-        <label for="intellectEdge">intellect edge</label>
-      </div>
-    </div>
-    <input type="submit" value="Save" class="btn">
-  </form>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
+
+  <div id="skills">
+    <form action="/characterSkills" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name">
+          <label for="name">skill name</label>
+        </div>
+        <p>
+          <input type="checkbox" name="trained" class="filled-in" id="filled-in-box" checked="checked">
+          <label for="filled-in-box">trained</label>
+        </p>
+        <p>
+          <input type="checkbox" name="skilled" class="filled-in" id="filled-in-box" checked="unchecked">
+          <label for="filled-in-box">skilled</label>
+        </p>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
 </div>

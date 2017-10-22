@@ -20,5 +20,3 @@ router.get('/about', (req, res) => {
 });
 
 module.exports = router;
-
-// 59ebba3bf84c7c10172336b5

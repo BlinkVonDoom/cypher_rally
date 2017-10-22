@@ -11,13 +11,13 @@ const methodOverride = require('method-override');
 const keys = require('./config/keys');
 require('./models/Character');
 require('./models/CharacterSkills');
-require('./models/CharacterSpecialAbilities');
+require('./models/Esoteries');
 require('./models/User');
 
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 const characters = require('./routes/characters');
-const characterSpecialAbilities = require('./routes/CharacterSpecialAbilities');
+const esoteries = require('./routes/Esoteries');
 const characterSkills = require('./routes/characterSkills');
 
 mongoose.Promise = global.Promise;
@@ -77,7 +77,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/characters', characters);
-app.use('/characterSpecialAbilities', characterSpecialAbilities);
+app.use('/esoteries', esoteries);
 app.use('/characterSkills', characterSkills);
 
 const port = process.env.PORT || 3000;

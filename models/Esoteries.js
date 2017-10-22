@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const CharacterSpecialAbilities = new Schema({
+const Esoteries = new Schema({
   character: {
     type: Schema.Types.ObjectId,
     ref: 'characters'
@@ -9,9 +9,15 @@ const CharacterSpecialAbilities = new Schema({
   name: {
     type: String
   },
+  costType: {
+    type: String
+  },
+  cost: {
+    type: Number
+  },
   description: {
     type: String
   }
 });
 
-mongoose.model('characterSpecialAbilities', CharacterSpecialAbilities);
+mongoose.model('esoteries', Esoteries);

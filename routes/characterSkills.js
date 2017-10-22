@@ -3,13 +3,13 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Character = mongoose.model('characters');
 const CharacterSkills = mongoose.model('characterSkills');
-const CharacterSpecialAbilities = mongoose.model('characterSpecialAbilities');
+const Esoteries = mongoose.model('esoteries');
 
 const User = mongoose.model('users');
 const { ensureAuthenticated, ensureGuest } = require('../helpers/auth');
 
 router.get('/:id', (req, res) => {
-  CharacterSpecialAbilities.findOne({ _id: req.params.id })
+  Esoteries.findOne({ _id: req.params.id })
     .then(characterSkills => {
       res.send(characterSkills);
     })
