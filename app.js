@@ -17,7 +17,7 @@ require('./models/User');
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 const characters = require('./routes/characters');
-const esoteries = require('./routes/Esoteries');
+const esoteries = require('./routes/esoteries');
 const characterSkills = require('./routes/characterSkills');
 
 mongoose.Promise = global.Promise;
