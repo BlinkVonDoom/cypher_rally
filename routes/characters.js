@@ -47,12 +47,12 @@ router.post('/', ensureAuthenticated, (req, res) => {
       edge: req.body.mightEdge
     },
     speed: {
-      pool: req.body.speedPool,
-      edge: req.body.speedEdge
+      pool: parseInt(req.body.speedPool),
+      edge: parseInt(req.body.speedEdge)
     },
     intellect: {
-      pool: req.body.intellectPool,
-      edge: req.body.intellectEdge
+      pool: parseInt(req.body.intellectPool),
+      edge: parseInt(req.body.intellectEdge)
     },
     armor: req.body.armor,
     author: req.user.id
@@ -100,7 +100,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
       character
         .save()
         .then(character => {
-          res.render(`/characters/show/${character.id}`);
+          res.render(`/character/show/${character.id}`);
         })
         .catch(e => res.send(e));
     })
