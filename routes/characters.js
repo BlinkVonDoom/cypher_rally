@@ -100,7 +100,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
       character
         .save()
         .then(character => {
-          res.render(`/character/show/${character.id}`);
+          res.render(`/characters/show/${character.id}`);
         })
         .catch(e => res.send(e));
     })
