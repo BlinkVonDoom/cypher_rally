@@ -47,12 +47,12 @@ router.post('/', ensureAuthenticated, (req, res) => {
       edge: req.body.mightEdge
     },
     speed: {
-      pool: parseInt(req.body.speedPool),
-      edge: parseInt(req.body.speedEdge)
+      pool: req.body.speedPool,
+      edge: req.body.speedEdge
     },
     intellect: {
-      pool: parseInt(req.body.intellectPool),
-      edge: parseInt(req.body.intellectEdge)
+      pool: req.body.intellectPool,
+      edge: req.body.intellectEdge
     },
     armor: req.body.armor,
     author: req.user.id

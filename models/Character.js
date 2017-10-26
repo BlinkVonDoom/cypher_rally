@@ -59,6 +59,9 @@ const CharacterSchema = new Schema({
   armor: {
     type: Number
   },
+  progress: {
+    type: Number
+  },
   characterSkills: [],
   esoteries: [
     // {
