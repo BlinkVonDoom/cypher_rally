@@ -61,7 +61,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
   new Character(newCharacter)
     .save()
     .then(character => {
-      res.redirect(`characters/show/${character.id}`);
+      res.redirect(`/characters/show/${character.id}`);
     })
     .catch(e => res.send(e));
 });
@@ -100,7 +100,7 @@ router.put('/:id', ensureAuthenticated, (req, res) => {
       character
         .save()
         .then(character => {
-          res.render(`/characters/show/${character.id}`);
+          res.redirect(`/characters/show/${character.id}`);
         })
         .catch(e => res.send(e));
     })
