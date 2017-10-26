@@ -8,11 +8,11 @@ const User = mongoose.model('users');
 const { ensureAuthenticated, ensureGuest } = require('../helpers/auth');
 
 router.get('/', ensureAuthenticated, (req, res) => {
-  Character.find({}, 'name')
+  Character.find({})
     .populate('author')
-    .sort({ date: 'desc' })
+    //.sort({ date: 'desc' })
     .then(characters => {
-      res.render('characters/index', characters);
+      res.render('characters/index', { characters });
     });
 });
 

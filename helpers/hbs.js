@@ -29,12 +29,12 @@ module.exports = {
         ' selected="selected"$&'
       );
   }
-  // editIcon: function(character.user, loggedUser, characterID, floating = true){
+  // editIcon: function(character.author, loggedUser, characterID, floating = true){
   //   if(characterUder == loggedUser) {
   //     if(floating){
-  //       return `<a href="/characters/edit/${character.id}" class="btn-floating halfway-fab red><i class="fa fa-pencil"></i></a>`
+  //       return `<a href="/characters/edit/${id}" class="btn-floating halfway-fab red><i class="fa fa-pencil"></i></a>`
   //     } else {
-  //       return `<a href="/characters/edit/${character.id}"><i class="fa fa-pencil"></i></a>`
+  //       return `<a href="/characters/edit/${id}"><i class="fa fa-pencil"></i></a>`
   //     }
   //   } else{
   //     return ``;
