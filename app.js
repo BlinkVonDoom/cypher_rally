@@ -82,7 +82,7 @@ app.use('/esoteries', esoteries);
 app.use('/characterSkills', characterSkills);
 
 const port = process.env.PORT || 3000;
-socket = io.listen(process.env.PORT);
+io.listen(process.env.PORT);
 app.listen(port, () => {
   console.log(`server started on ${port}`);
 });
