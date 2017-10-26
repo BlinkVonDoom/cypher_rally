@@ -37,6 +37,7 @@ const {
   editIcon
 } = require('./helpers/hbs');
 const app = express();
+const io = require('socket.io');
 app.set('view engine', 'handlebars');
 
 app.engine(
@@ -81,7 +82,7 @@ app.use('/esoteries', esoteries);
 app.use('/characterSkills', characterSkills);
 
 const port = process.env.PORT || 3000;
-
+socket = io.listen(process.env.PORT);
 app.listen(port, () => {
   console.log(`server started on ${port}`);
 });
