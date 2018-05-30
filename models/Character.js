@@ -62,7 +62,12 @@ const CharacterSchema = new Schema({
   progress: {
     type: Number
   },
-  characterSkills: [],
+  characterSkills: [
+    {
+      body: String,
+      type: Schema.Types.ObjectId
+    }
+  ],
   esoteries: [
     {
       type: Schema.Types.ObjectId,
