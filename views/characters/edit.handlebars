@@ -1,162 +1,170 @@
 <div class="row">
-  <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#character">character</a></li>
-        <li class="tab col s3 disabled"><a href="#esoteries">esoteries</a></li>
-        <li class="tab col s3 disabled"><a href="#skills">skills</a></li>
-      </ul>
-    </div>
-    <div id="character">
-      <form action="/characters/{{id}}?_method=PUT" method="post" class="col s12">
-        <input type="hidden" name="_method" value="PUT">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3"><a class="active" href="#character">character</a></li>
+      <li class="tab col s3"><a href="#esoteries">esoteries</a></li>
+      <li class="tab col s3"><a href="#skills">skills</a></li>
+    </ul>
+  </div>
+  <div id="character">
+    <form action="/characters/{{id}}?_method=PUT" method="post" class="col s12">
+      <input type="hidden" name="_method" value="PUT">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name" value="{{name}}">
+          <label for="name">character name</label>
+        </div>
+        <div class="form-group">
+          <label for="type">character type</label>
+          <select class="form-control" name="type">
+          {{#select type}}
+          <option>glaive</option>
+          <option>jack</option>
+          <option>nano</option>
+          {{/select}}
+        </select>
+        </div>
+        <div class="form-group">
+          <label for="focus">character focus</label>
+          <select class="form-control" name="focus">
+            {{#select focus}}
+            <option>bears a halo of fire</option>
+            <option>carries a quiver</option>
+            <option>commands mental powers</option>
+            <option>controls beasts</option>
+            <option>controls gravity</option>
+            <option>crafts illusions</option>
+            <option>crafts unique objects</option>
+            <option>employs magnetism</option>
+            <option>entertains</option>
+            <option>exists partially out of phase</option>
+            <option>explores dark place</option>
+            <option>fights with panache</option>
+            <option>focuses mind over matter</option>
+            <option>fuses flesh with steel</option>
+            <option>howls at the moon</option>
+            <option>hunts with great skill</option>
+            <option>controls gravity</option>
+            <option>leads</option>
+            <option>lives in the wilderness</option>
+            <option>masters defense</option>
+            <option>masters weaponry</option>
+            <option>murders</option>
+            <option>rages</option>
+            <option>rides the lightning</option>
+            <option>talks to machines</option>
+            <option>wears a sheen of ice</option>
+            <option>wields power with percision</option>
+            <option>wields two weapons at once</option>
+            <option>works miracles</option>
+            <option>works the back alleys</option>
+            {{/select}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="descriptor">character descriptor</label>
+          <select class="form-control" name="descriptor">
+            {{#select descriptor}}
+            <option>charming</option>
+            <option>clever</option>
+            <option>graceful</option>
+            <option>intelligent</option>
+            <option>learned</option>
+            <option>mystical/ mechanical</option>
+            <option>rugged</option>
+            <option>stealthy</option>
+            <option>strong</option>
+            <option>strong-willed</option>
+            <option>swift</option>
+            <option>tough</option>
+            {{/select}}
+          </select>
+        </div>
+        <div class="input-field">
+          <input type="number" name="tier" value="{{tier}}">
+          <label for="tier">tier</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="effort" value="{{effort}}">
+          <label for="effort">effort</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="armor" value="{{armor}}">
+          <label for="armor">armor</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="mightPool" value="{{might.pool}}">
+          <label for="mightPool">might pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="mightEdge" value="{{might.edge}}">
+          <label for="mightEdge">might edge</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="speedPool" value="{{speed.pool}}">
+          <label for="speedPool">speed pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="speedEdge" value="{{speed.edge}}">
+          <label for="speedEdge">speed edge</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="intellectPool" value="{{intellect.pool}}">
+          <label for="intellectPool">intellect pool</label>
+        </div>
+        <div class="input-field">
+          <input type="number" name="intellectEdge" value="{{intelect.edge}}">
+          <label for="intellectEdge">intellect edge</label>
+        </div>
+      </div>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
+
+  <div id="esoteries">
+    <form action="/esoteries/{{id}}" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name">
+          <label for="name">esotery name</label>
+        </div>
+        <div class="form-group">
+          <label for="costType">cost type</label>
+          <select class="form-control" name="costType">
+          <option>might</option>
+          <option>intellect</option>
+          <option>speed</option>
+        </div>
+        <div class="input-field">
+          <input type="number" name="cost">
+          <label for="cost">cost</label>
+        </div>
         <div class="row">
           <div class="input-field">
-            <input type="text" name="name" value="{{name}}">
-            <label for="name">character name</label>
-          </div>
-          <div class="form-group">
-            <label for="type">character type</label>
-            <select class="form-control" name="type">
-              {{#select type}}
-              <option>glaive</option>
-              <option>jack</option>
-              <option>nano</option>
-              {{/select}}
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="focus">character focus</label>
-            <select class="form-control" name="focus">
-              {{#select focus}}
-                <option>bears a halo of fire</option>
-                <option>carries a quiver</option>
-                <option>commands mental powers</option>
-                <option>controls beasts</option>
-                <option>controls gravity</option>
-                <option>crafts illusions</option>
-                <option>crafts unique objects</option>
-                <option>employs magnetism</option>
-                <option>entertains</option>
-                <option>exists partially out of phase</option>
-                <option>explores dark place</option>
-                <option>fights with panache</option>
-                <option>focuses mind over matter</option>
-                <option>fuses flesh with steel</option>
-                <option>howls at the moon</option>
-                <option>hunts with great skill</option>
-                <option>controls gravity</option>
-                <option>leads</option>
-                <option>lives in the wilderness</option>
-                <option>masters defense</option>
-                <option>masters weaponry</option>
-                <option>murders</option>
-                <option>rages</option>
-                <option>rides the lightning</option>
-                <option>talks to machines</option>
-                <option>wears a sheen of ice</option>
-                <option>wields power with percision</option>
-                <option>wields two weapons at once</option>
-                <option>works miracles</option>
-                <option>works the back alleys</option>
-                {{/select}}
-              </select>
-          </div>
-          <div class="form-group">
-            <label for="descriptor">character descriptor</label>
-            <select class="form-control" name="descriptor">
-              {{#select descriptor}}
-                <option>charming</option>
-                <option>clever</option>
-                <option>graceful</option>
-                <option>intelligent</option>
-                <option>learned</option>
-                <option>mystical/ mechanical</option>
-                <option>rugged</option>
-                <option>stealthy</option>
-                <option>strong</option>
-                <option>strong-willed</option>
-                <option>swift</option>
-                <option>tough</option>
-                {{/select}}
-              </select>
-          </div>
-          <div class="input-field">
-            <input type="number" name="armor" value="{{armor}}">
-            <label for="armor">armor</label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="mightPool" value="{{might.pool}}">
-            <label for="mightPool">might pool </label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="mightEdge" value="{{might.edge}}">
-            <label for="mightEdge">might edge</label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="speedPool" value="{{speed.pool}}">
-            <label for="speedPool">speed pool</label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="speedEdge" value="{{speed.edge}}">
-            <label for="speedEdge">speed edge</label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="intellectPool" value="{{intellect.pool}}">
-            <label for="intellectPool">intellect pool</label>
-          </div>
-          <div class="input-field">
-            <input type="number" name="intellectEdge" value="{{intellect.edge}}">
-            <label for="intellectEdge">intellect edge</label>
+            <h5>description:</h5>
+            <textarea name="body"></textarea>
           </div>
         </div>
-        <input type="submit" value="Save" class="btn">
-      </form>
-    </div>
-    <div id="esoteries">
-      <form action="/esoteries" method="post" class="col s12">
-        <div class="row">
-          <div class="input-field">
-            <input type="text" name="name">
-            <label for="name">esotery name</label>
-          </div>
-          <div class="form-group">
-            <label for="costType">cost type</label>
-            <select class="form-control" name="costType">
-              <option>might</option>
-              <option>intellect</option>
-              <option>speed</option>
-            </div>
-            <div class="input-field">
-              <input type="number" name="cost">
-              <label for="cost">cost</label>
-            </div>
-            <div class="row">
-              <div class="input-field">
-                <h5>description:</h5>
-                <textarea name="body"></textarea>
-              </div>
-            </div>
-          </div>
-          <input type="submit" value="Save" class="btn">
-        </form>
       </div>
-      <div id="skills">
-        <form action="/characterSkills" method="post" class="col s12">
-          <div class="row">
-            <div class="input-field">
-              <input type="text" name="name">
-              <label for="name">skill name</label>
-            </div>
-            <p>
-              <input type="checkbox" name="trained" class="filled-in" id="filled-in-box" checked="checked">
-              <label for="filled-in-box">trained</label>
-            </p>
-            <p>
-              <input type="checkbox" name="skilled" class="filled-in" id="filled-in-box2" checked="checked">
-              <label for="filled-in-box">skilled</label>
-            </p>
-          <input type="submit" value="Save" class="btn">
-        </form>
-      </div>
-    </div>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
+  <div id="skills">
+    <form action="/characterSkills" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field">
+          <input type="text" name="name">
+          <label for="name">skill name</label>
+        </div>
+        <p>
+          <input type="checkbox" name="trained" class="filled-in" id="filled-in-box" checked="checked">
+          <label for="filled-in-box">trained</label>
+        </p>
+        <p>
+          <input type="checkbox" name="skilled" class="filled-in" id="filled-in-box2" checked="checked">
+          <label for="filled-in-box">skilled</label>
+        </p>
+      <input type="submit" value="Save" class="btn">
+    </form>
+  </div>
+</div>

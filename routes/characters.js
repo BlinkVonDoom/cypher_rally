@@ -40,7 +40,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
     type: req.body.type,
     descriptor: req.body.descriptor,
     focus: req.body.focus,
-    tier: req.body.teir,
+    tier: req.body.tier,
     effort: req.body.effot,
     might: {
       pool: req.body.mightPool,
