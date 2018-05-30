@@ -78,8 +78,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/characters', characters);
-app.use('/esoteries', esoteries);
-app.use('/characterSkills', characterSkills);
+app.use('/characters', esoteries);
+app.use('/characters', characterSkills);
 
 const port = process.env.PORT || 3000;
 io.on;
