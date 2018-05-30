@@ -64,10 +64,10 @@ const CharacterSchema = new Schema({
   },
   characterSkills: [],
   esoteries: [
-    // {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'esoteries'
-    // }
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'esoteries'
+    }
   ],
   author: {
     type: Schema.Types.ObjectId,
