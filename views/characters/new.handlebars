@@ -110,15 +110,14 @@
           <label for="intellectEdge">intellect edge</label>
         </div>
       </div>
-      <input type="submit" value="Save" class="btn">
     </form>
   </div>
 
   <div id="esoteries">
-    <form action="/esoteries" method="post" class="col s12">
+    <form action="/characters" method="post" class="col s12">
       <div class="row">
         <div class="input-field">
-          <input type="text" name="name">
+          <input type="text" name="esoteryName">
           <label for="name">esotery name</label>
         </div>
         <div class="form-group">
@@ -129,7 +128,7 @@
           <option>speed</option>
         </div>
         <div class="input-field">
-          <input type="number" name="cost">
+          <input type="number" name="esoteryCost">
           <label for="cost">cost</label>
         </div>
         <div class="row">
@@ -139,14 +138,13 @@
           </div>
         </div>
       </div>
-      <input type="submit" value="Save" class="btn">
     </form>
   </div>
   <div id="skills">
     <form action="/characterSkills" method="post" class="col s12">
       <div class="row">
         <div class="input-field">
-          <input type="text" name="name">
+          <input type="text" name="skillName">
           <label for="name">skill name</label>
         </div>
         <p>
@@ -157,7 +155,7 @@
           <input type="checkbox" name="skilled" class="filled-in" id="filled-in-box2" checked="checked">
           <label for="filled-in-box">skilled</label>
         </p>
-      <input type="submit" value="Save" class="btn">
     </form>
+    <input type="submit" value="Save" class="btn">
   </div>
 </div>

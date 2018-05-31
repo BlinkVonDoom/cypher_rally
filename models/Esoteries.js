@@ -6,16 +6,16 @@ const Esoteries = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'characters'
   },
-  name: {
+  esoteryName: {
     type: String
   },
   costType: {
     type: String
   },
-  cost: {
+  esoteryCost: {
     type: Number
   },
-  description: {
+  esoteryDescription: {
     type: String
   }
 });

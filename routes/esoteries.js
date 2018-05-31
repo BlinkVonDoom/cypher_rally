@@ -19,10 +19,10 @@ router.post('/:id', (req, res) => {
   Character.findOne({ _id: req.params.id }).then(character => {
     const newEsoteries = {
       character: request.params.id,
-      name: req.body.name,
-      cost: req.body.cost,
+      esoteryName: req.body.esoteryName,
+      esoteryCost: req.body.esoteryCost,
       costType: req.body.costType,
-      description: req.body.description
+      esoteryDescription: req.body.esoteryDescription
     };
 
     new Esoteries(newEsoteries)
